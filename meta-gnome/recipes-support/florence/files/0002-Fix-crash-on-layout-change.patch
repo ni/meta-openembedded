@@ -1,0 +1,48 @@
+From fc8fed062c6066875d2a895cda1453c5157a5b73 Mon Sep 17 00:00:00 2001
+From: Jonathan David <jonathan.david@ni.com>
+Date: Thu, 10 Jul 2014 12:02:13 -0500
+Subject: [PATCH 2/7] Fix crash on layout change
+
+Allow user to change layouts during runtime without crashing the
+virtual keyboard. Prevents memory leak by freeing previous
+xkeyboard information stored in memory.
+---
+ src/status.c | 1 +
+ src/view.c   | 3 ++-
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/src/status.c b/src/status.c
+index 4077f2a..b503fbd 100644
+--- a/src/status.c
++++ b/src/status.c
+@@ -571,6 +571,7 @@ void status_free(struct status *status)
+ /* reset the status to its original state */
+ void status_reset(struct status *status)
+ {
++	if (status->xkeyboard) xkeyboard_free(status->xkeyboard);
+ 	status->focus=NULL;
+ 	status->pressed=NULL;
+ 	if (status->timer) g_timer_destroy(status->timer);
+diff --git a/src/view.c b/src/view.c
+index 15ef5e5..6f33118 100644
+--- a/src/view.c
++++ b/src/view.c
+@@ -19,6 +19,7 @@
+ 
+ */
+ 
++#include <stdio.h>
+ #include "system.h"
+ #include "view.h"
+ #include "trace.h"
+@@ -795,6 +796,6 @@ void view_update_layout(struct view *view, struct style *style, GSList *keyboard
+ {
+ 	view->style=style;
+ 	view->keyboards=keyboards;
++	xkeyboard_register_events(view->status->xkeyboard, view_on_keys_changed, (gpointer)view);
+ 	view_update_extensions(NULL, 0, NULL, (gpointer)view);
+ }
+-
+-- 
+2.0.1
+
