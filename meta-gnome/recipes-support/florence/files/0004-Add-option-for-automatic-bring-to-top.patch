@@ -1,0 +1,81 @@
+From bdcede795c84073977dc580ae32d783a23d3c66f Mon Sep 17 00:00:00 2001
+From: Jonathan David <jonathan.david@ni.com>
+Date: Thu, 10 Jul 2014 12:24:57 -0500
+Subject: [PATCH 4/7] Add option for automatic bring to top
+
+Add code to enable or disable the keep_on_top option in
+the settings window. Previously, the function could not
+be disabled without changing source code or accessing
+Florence files directly.
+---
+ data/florence.glade | 17 +++++++++++++++++
+ src/florence.c      |  4 ++--
+ src/settings.c      |  2 +-
+ 3 files changed, 20 insertions(+), 3 deletions(-)
+
+diff --git a/data/florence.glade b/data/florence.glade
+index 6948549..4cbb81a 100644
+--- a/data/florence.glade
++++ b/data/florence.glade
+@@ -422,6 +422,23 @@
+                                 <property name="position">5</property>
+                               </packing>
+                             </child>
++			    <child>
++                              <object class="GtkCheckButton" id="flo_keep_on_top">
++                                <property context="yes" name="label" translatable="yes">Keep on top</property>
++                                <property name="visible">True</property>
++                                <property name="can_focus">True</property>
++                                <property name="receives_default">False</property>
++                                <property name="has_tooltip">True</property>
++                                <property context="yes" name="tooltip-text" translatable="yes">Keep the keyboard on top with a timer.</property>
++                                <property name="draw_indicator">True</property>
++                                <signal handler="settings_window_set_bool" name="toggled"/>
++                              </object>
++                              <packing>
++                                <property name="expand">False</property>
++                                <property name="fill">False</property>
++                                <property name="position">6</property>
++                              </packing>
++                            </child>
+                           </object>
+                         </child>
+                       </object>
+diff --git a/src/florence.c b/src/florence.c
+index 7d29ef9..084330a 100644
+--- a/src/florence.c
++++ b/src/florence.c
+@@ -38,7 +38,7 @@
+ #include <cspi/spi.h>
+ #endif
+ 
+-/* bring the window back to front every seconds */
++/* bring the window back to front every second */
+ #define FLO_TO_TOP_TIMEOUT 1000
+ 
+ /* Called on destroy event (systray quit or close window) */
+@@ -488,7 +488,7 @@ void flo_set_keep_on_top(GConfClient *client, guint xnxn_id, GConfEntry *entry,
+ 	flo_start_keep_on_top(florence, gconf_value_get_bool(gconf_entry_get_value(entry)));
+ }
+ 
+-/* handles mouse motion events 
++/* handles mouse motion events
+  * update the keyboard key under the mouse */
+ gboolean flo_mouse_move_event(GtkWidget *window, GdkEvent *event, gpointer user_data)
+ {
+diff --git a/src/settings.c b/src/settings.c
+index 8016a40..c968888 100644
+--- a/src/settings.c
++++ b/src/settings.c
+@@ -49,7 +49,7 @@ static struct settings_param settings_defaults[] = {
+ 	{ "flo_transparent", "window/transparent", SETTINGS_BOOL, { .vbool = TRUE } },
+ 	{ "flo_task_bar", "window/task_bar", SETTINGS_BOOL, { .vbool = FALSE } },
+ 	{ "flo_always_on_top", "window/always_on_top", SETTINGS_BOOL, { .vbool = TRUE } },
+-	{ SETTINGS_NONE, "window/keep_on_top", SETTINGS_BOOL, { .vbool = TRUE } },
++	{ "flo_keep_on_top", "window/keep_on_top", SETTINGS_BOOL, { .vbool = FALSE } },
+ 	{ SETTINGS_NONE, "behaviour/startup_notification", SETTINGS_BOOL, { .vbool = FALSE } },
+ 	{ "flo_keys", "colours/key", SETTINGS_COLOR, { .vstring = "#000000" } },
+ 	{ SETTINGS_NONE, "colours/outline", SETTINGS_COLOR, { .vstring = "#808080" } },
+-- 
+2.0.1
+
