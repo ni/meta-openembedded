@@ -1,0 +1,102 @@
+From cfecf70a1bc3acea268d51d9da07e0a56785229d Mon Sep 17 00:00:00 2001
+From: Jonathan David <jonathan.david@ni.com>
+Date: Thu, 24 Jul 2014 16:55:59 -0500
+Subject: [PATCH 06/10] Fix memory leak
+
+Fix a memory leak issue when changing layouts.
+---
+ src/florence.c | 22 +++++++++++++++++-----
+ src/status.c   |  1 -
+ 2 files changed, 17 insertions(+), 6 deletions(-)
+
+diff --git a/src/florence.c b/src/florence.c
+index 084330a..23ab98d 100644
+--- a/src/florence.c
++++ b/src/florence.c
+@@ -350,7 +350,7 @@ GSList *flo_keyboards_load(struct florence *florence, struct layout *layout)
+ 	struct keyboard_globaldata global;
+ 
+ 	global.status=florence->status;
+-	florence->status->xkeyboard=xkeyboard_new();
++	if (!florence->status->xkeyboard) florence->status->xkeyboard=xkeyboard_new();
+ 	global.style=florence->style;
+ 
+ 	/* read the layout file and create the extensions */
+@@ -365,7 +365,6 @@ GSList *flo_keyboards_load(struct florence *florence, struct layout *layout)
+ #endif
+ 	}
+ 
+-	xkeyboard_client_map_free(florence->status->xkeyboard);
+ 	return keyboards;
+ }
+ 
+@@ -555,7 +554,6 @@ void flo_layout_unload(struct florence *florence)
+ 		keyboard_free(keyboard);
+ 		florence->keyboards=g_slist_delete_link(florence->keyboards, florence->keyboards);
+ 	}
+-	if (florence->style) style_free(florence->style);
+ }
+ 
+ /* loads the layout file
+@@ -580,7 +578,7 @@ void flo_layout_load(struct florence *florence)
+ 	layoutreader_infos_free(infos);
+ 
+ 	/* create the style object */
+-	florence->style=style_new(NULL);
++	if (!florence->style) florence->style=style_new(NULL);
+ 
+ 	/* create the keyboard objects */
+ 	florence->keyboards=flo_keyboards_load(florence, layout);
+@@ -598,6 +596,18 @@ void flo_layout_reload(GConfClient *client, guint xnxn_id, GConfEntry *entry, gp
+ 	view_update_layout(florence->view, florence->style, florence->keyboards);
+ }
+ 
++/* reloads the style file */
++void flo_style_reload(GConfClient *client, guint xnxn_id, GConfEntry *entry, gpointer user_data)
++{
++	struct florence *florence=(struct florence *)user_data;
++	status_reset(florence->status);
++	style_free(florence->style);
++	flo_layout_unload(florence);
++	florence->style=style_new(NULL);
++	flo_layout_load(florence);
++	view_update_layout(florence->view, florence->style, florence->keyboards);
++}
++
+ #ifdef ENABLE_AT_SPI
+ /* check if at-spi is enabled in gnome */
+ gboolean flo_check_at_spi(void)
+@@ -687,7 +697,7 @@ struct florence *flo_new(gboolean gnome, const gchar *focus_back, PanelApplet *a
+ 	settings_changecb_register("behaviour/auto_hide", flo_set_auto_hide, florence);
+ 	settings_changecb_register("window/keep_on_top", flo_set_keep_on_top, florence);
+ 	/* TODO: just reload the style, no need to reload the whole layout */
+-	settings_changecb_register("layout/style", flo_layout_reload, florence);
++	settings_changecb_register("layout/style", flo_style_reload, florence);
+ 	settings_changecb_register("layout/file", flo_layout_reload, florence);
+ 
+ 	return florence;
+@@ -706,7 +716,9 @@ void flo_free(struct florence *florence)
+ #ifndef APPLET
+ 	trayicon_free(florence->trayicon);
+ #endif
++	xkeyboard_client_map_free(florence->status->xkeyboard);
+ 	flo_layout_unload(florence);
++	if (florence->style) style_free(florence->style);
+ 	if (florence->view) view_free(florence->view);
+ 	if (florence->status) status_free(florence->status);
+ #ifdef ENABLE_RAMBLE
+diff --git a/src/status.c b/src/status.c
+index 33d791b..e78cc0d 100644
+--- a/src/status.c
++++ b/src/status.c
+@@ -573,7 +573,6 @@ void status_free(struct status *status)
+ /* reset the status to its original state */
+ void status_reset(struct status *status)
+ {
+-	if (status->xkeyboard) xkeyboard_free(status->xkeyboard);
+ 	status->focus=NULL;
+ 	status->pressed=NULL;
+ 	if (status->timer) g_timer_destroy(status->timer);
+-- 
+2.0.3
+

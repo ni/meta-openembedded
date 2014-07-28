@@ -15,7 +15,8 @@ SRC_URI = "${SOURCEFORGE_MIRROR}/florence/florence/${PV}/florence-${PV}.tar.bz2 
            file://0002-Fix-crash-on-layout-change.patch \
            file://0003-Add-minimization-functionality.patch \
            file://0004-Add-option-for-automatic-bring-to-top.patch \
-           file://0005-Unpress-key-when-mouse-leaves-key-area.patch"
+           file://0005-Unpress-key-when-mouse-leaves-key-area.patch \
+           file://0006-Fix-memory-leak.patch"
 
 SRC_URI[md5sum] = "56d12e5b47c100d9df172aa5ddc0f609"
 SRC_URI[sha256sum] = "7b06ed84ef2b7b22d8d2cf0c7d013a05409bd82028240ac8719a68b192d5bc62"
