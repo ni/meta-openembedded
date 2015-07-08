@@ -24,7 +24,7 @@ S = "${WORKDIR}/${BPN}${PV}/js/src"
 
 inherit autotools pkgconfig perlnative pythonnative
 
-DEPENDS += "nspr zlib"
+DEPENDS += "nspr zlib libice libxt"
 
 # nspr's package-config is ignored so set libs manually
 EXTRA_OECONF = " \
