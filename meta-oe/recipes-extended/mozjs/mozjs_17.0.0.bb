@@ -24,7 +24,7 @@ S = "${WORKDIR}/${BPN}${PV}/js/src"
 
 inherit autotools pkgconfig perlnative pythonnative
 
-DEPENDS += "nspr zlib"
+DEPENDS += "nspr zlib libice libxt"
 
 # Host specific flags need to be defined, otherwise target flags will be passed to the host
 export HOST_CFLAGS = "${BUILD_CFLAGS}"
