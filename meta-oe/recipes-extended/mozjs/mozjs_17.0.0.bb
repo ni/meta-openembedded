@@ -50,6 +50,7 @@ do_configure() {
       gnu-configize --force
       mv config.guess config.sub build/autoconf )
     ${S}/configure ${EXTRA_OECONF}
+    sed -ie 's:-Wl,-rpath-link,$(prefix)/lib::' config/autoconf.mk
 }
 
 # patch.bbclass will try to apply the patches already present and fail, so clean them out
