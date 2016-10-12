@@ -22,7 +22,7 @@ SRC_URI = "http://www.balabit.com/downloads/files/syslog-ng/sources/${PV}/source
            file://configure.ac-add-option-enable-thread-tls-to-manage-.patch \
 "
 
-inherit autotools systemd pkgconfig update-alternatives update-rc.d
+inherit autotools systemd pkgconfig update-rc.d update-alternatives
 
 EXTRA_OECONF = " \
     --enable-dynamic-linking \
@@ -116,3 +116,19 @@ python () {
 
 INITSCRIPT_NAME = "syslog"
 INITSCRIPT_PARAMS = "start 20 2 3 4 5 . stop 90 0 1 6 ."
+
+# XXX update-rc.d and update-alternatives don't work well together.
+#  Both generate interdependant postinst and prerm code; I.e. where
+#  order of the generated code matters. prerm breaks when
+#  update-rc.d.bbclass is inherited first by this recipie, and postinst
+#  breaks when update-alternatives.bbclass is inherited first. The
+#  former can be worked around by stopping syslog-ng in prerm by the
+#  real init.d filename in addition to it's update-alternatives alias.
+#  This is an ugly hack, but it's enough to fix both install and
+#  uninstall cases for syslog-ng packages until update-rc.d and
+#  update-alternatives can be fixed.
+updatercd_prerm_append() {
+if [ -z "$D" ]; then
+	${INIT_D_DIR}/syslog.${BPN} stop
+fi
+}
