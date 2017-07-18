@@ -11,7 +11,9 @@ PR = "r1"
 DEPENDS = "gtk+ libxml2 libglade librsvg libxtst gconf gconf-native cairo intltool-native gnome-doc-utils libnotify gstreamer"
 
 SRC_URI = "${SOURCEFORGE_MIRROR}/florence/florence/${PV}-gtk2/florence-${PV}.tar.bz2 \
-           file://fix-no-atspi-compile.patch"
+           file://fix-no-atspi-compile.patch \
+           file://0001-Merge-patch-from-Jonathan-David.patch \
+           file://0002-Merge-patch-sent-by-Jonathan-David.patch"
 SRC_URI[md5sum] = "8d5c2367a28485bfcf577650b0badab7"
 SRC_URI[sha256sum] = "26d33aa20d5fbf34ceeded4c41cb922d2988b6082e33d9acc46dd7bfe56d31a1"
 
