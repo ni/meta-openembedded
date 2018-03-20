@@ -14,9 +14,11 @@ RDEPENDS_${PN} += " \
     ${PYTHON_PN}-ctypes \
     ${PYTHON_PN}-distutils \
     ${PYTHON_PN}-importlib \
+    ${PYTHON_PN}-io \
     ${PYTHON_PN}-json \
     ${PYTHON_PN}-logging \
     ${PYTHON_PN}-multiprocessing \
+    ${PYTHON_PN}-pickle \
     ${PYTHON_PN}-pkgutil \
     ${PYTHON_PN}-pprint \
     ${PYTHON_PN}-shell \
