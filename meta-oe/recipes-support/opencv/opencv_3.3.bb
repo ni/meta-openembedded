@@ -60,6 +60,7 @@ SRC_URI = "git://github.com/opencv/opencv.git;name=opencv;protocol=https \
     file://javagen.patch \
     file://protobuf.patch \
     file://already-exists.patch \
+    file://0001-Temporarliy-work-around-deprecated-ffmpeg-RAW-functi.patch \
 "
 
 S = "${WORKDIR}/git"
