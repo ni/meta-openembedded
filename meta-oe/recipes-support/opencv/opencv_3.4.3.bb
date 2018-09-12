@@ -51,6 +51,8 @@ SRC_URI = "git://github.com/opencv/opencv.git;name=opencv;protocol=https \
     file://0003-To-fix-errors-as-following.patch \
     file://fixpkgconfig.patch \
     file://0001-Temporarliy-work-around-deprecated-ffmpeg-RAW-functi.patch \
+    file://0001-Dont-use-isystem.patch \
+    file://0001-Check-for-clang-before-using-isystem.patch \
 "
 
 S = "${WORKDIR}/git"
