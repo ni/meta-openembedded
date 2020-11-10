@@ -9,6 +9,9 @@ SRC_URI[sha256sum] = "663c000625725d3a63466a674df4ee7f62bf8ca1ae8a0b87a6411eb811
 
 PYPI_PACKAGE = "pycares"
 inherit pypi
+
+DEPENDS += "${PYTHON_PN}-cffi-native"
+
 RDEPENDS_${PN} = "\
     ${PYTHON_PN}-cffi \
     ${PYTHON_PN}-idna \
