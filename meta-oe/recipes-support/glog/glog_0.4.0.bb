@@ -10,12 +10,10 @@ DEPENDS = "libunwind"
 
 SRC_URI = " \
     git://github.com/google/glog.git;nobranch=1;protocol=https \
-    file://0001-Rework-CMake-glog-VERSION-management.patch \
-    file://0002-Find-Libunwind-during-configure.patch \
-    file://0003-installation-path-fix.patch \
+    file://0001-Find-Libunwind-during-configure.patch \
 "
 
-SRCREV = "a6a166db069520dbbd653c97c2e5b12e08a8bb26"
+SRCREV = "96a2f23dca4cc7180821ca5f32e526314395d26a"
 
 S = "${WORKDIR}/git"
 
