@@ -61,7 +61,6 @@ SRC_URI = "git://github.com/opencv/opencv.git;name=opencv \
     file://protobuf.patch \
     file://already-exists.patch \
 "
-PV = "3.3+git${SRCPV}"
 
 S = "${WORKDIR}/git"
 
