@@ -13,7 +13,7 @@ inherit pkgconfig
 COMPATIBLE_HOST = "(i.86|x86_64|arm|aarch64).*-linux"
 
 SRCREV = "c1d6b10e1ed4ba2be07f385eae5bceb694478a10"
-SRC_URI = "git://github.com/rhinstaller/efivar.git \
+SRC_URI = "git://github.com/rhinstaller/efivar.git;protocol=https \
            file://allow-multi-definitions-for-native.patch \
            "
 SRC_URI_append_class-target = " file://0001-efivar-fix-for-cross-compile.patch \

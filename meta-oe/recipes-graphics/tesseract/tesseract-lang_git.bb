@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=9648bd7af63bd3cc4f5ac046d12c49e4"
 
 PV = "3.04.00+git${SRCPV}"
 SRCREV = "3cf1e2df1fe1d1da29295c9ef0983796c7958b7d"
-SRC_URI = "git://github.com/tesseract-ocr/tessdata.git"
+SRC_URI = "git://github.com/tesseract-ocr/tessdata.git;protocol=https"
 S = "${WORKDIR}/git"
 
 inherit allarch

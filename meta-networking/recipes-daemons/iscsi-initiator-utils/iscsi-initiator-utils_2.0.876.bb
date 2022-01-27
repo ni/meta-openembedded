@@ -13,7 +13,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=393a5ca445f6965873eca0259a17f833"
 
 SRCREV ?= "24580adc4c174bbc5dde3ae7594a46d57635e906"
 
-SRC_URI = "git://github.com/open-iscsi/open-iscsi \
+SRC_URI = "git://github.com/open-iscsi/open-iscsi;protocol=https \
     file://initd.debian \
     file://99_iscsi-initiator-utils \
     file://iscsi-initiator \

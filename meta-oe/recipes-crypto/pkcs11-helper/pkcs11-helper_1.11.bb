@@ -15,7 +15,7 @@ LIC_FILES_CHKSUM = " \
     file://COPYING.GPL;md5=8a71d0475d08eee76d8b6d0c6dbec543 \
     file://COPYING.BSD;md5=f79f90ea7a106796af80b5d05f1f8da1 \
 "
-SRC_URI = "git://github.com/OpenSC/${BPN}.git"
+SRC_URI = "git://github.com/OpenSC/${BPN}.git;protocol=https"
 SRC_URI[md5sum] = "9f62af9f475901b89355266141306673"
 SRC_URI[sha256sum] = "494ec59c93e7c56c528f335d9353849e2e7c94a6b1b41c89604694e738113386"
 

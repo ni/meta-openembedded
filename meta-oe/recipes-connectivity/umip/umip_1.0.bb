@@ -9,7 +9,7 @@ LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://COPYING;md5=073dc31ccb2ebed70db54f1e8aeb4c33"
 DEPENDS = "rpm indent-native"
 
-SRC_URI = "git://github.com/jlanza/umip \
+SRC_URI = "git://github.com/jlanza/umip;protocol=https \
            file://add-dependency-to-support-parallel-compilation.patch \
            file://mip6d \
            file://mip6d.service \

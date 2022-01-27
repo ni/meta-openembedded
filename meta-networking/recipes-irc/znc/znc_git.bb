@@ -7,8 +7,8 @@ DEPENDS = "openssl zlib icu"
 
 PV = "1.6.0"
 
-SRC_URI = "git://github.com/znc/znc.git;name=znc \
-           git://github.com/jimloco/Csocket.git;destsuffix=git/third_party/Csocket;name=Csocket \
+SRC_URI = "git://github.com/znc/znc.git;name=znc;protocol=https \
+           git://github.com/jimloco/Csocket.git;destsuffix=git/third_party/Csocket;name=Csocket;protocol=https \
           "
 SRCREV_znc = "f47e8465efa4e1cd948b9caae93ac401b4355df8"
 SRCREV_Csocket = "07b4437396122650e5b8fb3d014e820a5decf4ee"

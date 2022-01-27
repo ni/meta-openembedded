@@ -12,7 +12,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=18810669f13b87348459e611d31ab760 \
 BASEPV = "0.5.8"
 PV = "${BASEPV}+git${SRCPV}"
 SRCREV = "f5156e2e41bb418f14761afea22eee8efb49fb85"
-SRC_URI = "git://github.com/lcdproc/lcdproc;branch=lcdproc-${BASEPV} \
+SRC_URI = "git://github.com/lcdproc/lcdproc;branch=lcdproc-${BASEPV};protocol=https \
            file://0001-include-asm-ioctl.h-explicitly.patch \
            "
 

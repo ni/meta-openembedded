@@ -14,7 +14,7 @@ PV = "2.0.0+gitr${SRCPV}"
 PKGV = "${GITPKGVTAG}"
 
 SRCREV = "1648deb435ad52206f7aa2afe4b4dff71d9329bc"
-SRC_URI = "git://github.com/FreeRDP/FreeRDP.git \
+SRC_URI = "git://github.com/FreeRDP/FreeRDP.git;protocol=https \
     file://winpr-makecert-Build-with-install-RPATH.patch \
     file://0001-Fix-gstreamer-1.0-detection.patch \
 "

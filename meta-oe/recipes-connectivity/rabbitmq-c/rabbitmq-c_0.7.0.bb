@@ -3,7 +3,7 @@ HOMEPAGE = "https://github.com/alanxz/rabbitmq-c"
 LIC_FILES_CHKSUM = "file://LICENSE-MIT;md5=6b7424f9db80cfb11fdd5c980b583f53"
 LICENSE = "MIT"
 
-SRC_URI = "git://github.com/alanxz/rabbitmq-c.git"
+SRC_URI = "git://github.com/alanxz/rabbitmq-c.git;protocol=https"
 SRCREV = "4dde30ce8d984edda540349f57eb7995a87ba9de"
 
 S = "${WORKDIR}/git"

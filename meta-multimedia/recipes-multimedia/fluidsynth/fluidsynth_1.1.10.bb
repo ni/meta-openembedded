@@ -7,7 +7,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=fc178bcd425090939a8b634d1d6a9594"
 DEPENDS = "alsa-lib ncurses glib-2.0"
 
 SRC_URI = " \
-    git://github.com/FluidSynth/fluidsynth.git;branch=1.1.x \
+    git://github.com/FluidSynth/fluidsynth.git;branch=1.1.x;protocol=https \
     file://0001-Use-ARM-NEON-accelaration-for-float-multithreaded-se.patch \
 "
 SRCREV = "f5a0fee6f7f2b2ab4c866df1acb649333464b3fd"

@@ -6,7 +6,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=393a5ca445f6965873eca0259a17f833"
 
 DEPENDS = "zlib libsigc++-2.0 openssl cppunit"
 
-SRC_URI = "git://github.com/rakshasa/libtorrent \
+SRC_URI = "git://github.com/rakshasa/libtorrent;protocol=https \
            file://don-t-run-code-while-configuring-package.patch \
            file://0001-implement-64bit-atomic-for-mips.patch \
            file://0001-Define-64bit-atomic-helpers-for-ppc-32-bit.patch \

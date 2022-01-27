@@ -7,7 +7,7 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384
 DEPENDS = "curl"
 DEPENDS_class-native = "curl-native"
 
-SRC_URI = "git://github.com/jpbarrette/curlpp.git"
+SRC_URI = "git://github.com/jpbarrette/curlpp.git;protocol=https"
 
 SRCREV = "592552a165cc569dac7674cb7fc9de3dc829906f"
 

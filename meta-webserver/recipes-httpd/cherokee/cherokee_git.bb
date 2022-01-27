@@ -9,7 +9,7 @@ DEPENDS = "unzip-native libpcre openssl mysql5 ${@bb.utils.contains('DISTRO_FEAT
 
 SRCREV = "75f041e2255e6dd0692db2f14611c2647dbe8425"
 PV = "1.2.104+git${SRCPV}"
-SRC_URI = "git://github.com/cherokee/webserver \
+SRC_URI = "git://github.com/cherokee/webserver;protocol=https \
            file://cherokee.init \
            file://cherokee.service \
            file://cherokee-install-configured.py-once.patch \

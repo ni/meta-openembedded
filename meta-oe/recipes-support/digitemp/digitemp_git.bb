@@ -6,7 +6,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=44fee82a1d2ed0676cf35478283e0aa0"
 
 PV = "3.7.1+git${SRCPV}"
 
-SRC_URI = "git://github.com/bcl/digitemp"
+SRC_URI = "git://github.com/bcl/digitemp;protocol=https"
 
 SRCREV = "389f67655efa1674f595106c3a47b5ad082609a7"
 

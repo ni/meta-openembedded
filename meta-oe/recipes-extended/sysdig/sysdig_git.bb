@@ -13,7 +13,7 @@ OECMAKE_GENERATOR = "Unix Makefiles"
 DEPENDS = "luajit zlib ncurses"
 RDEPENDS_${PN} = "bash"
 
-SRC_URI = "git://github.com/draios/sysdig.git;branch=master \
+SRC_URI = "git://github.com/draios/sysdig.git;branch=master;protocol=https \
            file://0001-libsinsp-Port-to-build-with-lua-5.2.patch \
            file://0001-Fix-build-with-musl-backtrace-APIs-are-glibc-specifi.patch \
           "

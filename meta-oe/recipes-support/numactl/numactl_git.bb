@@ -14,7 +14,7 @@ LIC_FILES_CHKSUM = "file://README;beginline=19;endline=32;md5=5644cc3851cb2499f6
 SRCREV = "ea3a70681c2f523fe58e1d44527f478ca76db74e"
 PV = "2.0.11+git${SRCPV}"
 
-SRC_URI = "git://github.com/numactl/numactl \
+SRC_URI = "git://github.com/numactl/numactl;protocol=https \
     file://fix-null-pointer.patch \
     file://Fix-the-test-output-format.patch \
     file://Makefile \

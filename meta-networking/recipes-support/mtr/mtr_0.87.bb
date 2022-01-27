@@ -11,7 +11,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263 \
 PV .= "+git${SRCPV}"
 
 SRCREV = "e6d0a7e93129e8023654ebf58dfa8135d1b1af56"
-SRC_URI = "git://github.com/traviscross/mtr"
+SRC_URI = "git://github.com/traviscross/mtr;protocol=https"
 
 S = "${WORKDIR}/git"
 

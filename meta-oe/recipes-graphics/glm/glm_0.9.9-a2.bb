@@ -11,7 +11,7 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://readme.md;beginline=21;endline=22;md5=3075b5727d36f29edccf97b93e72b790"
 
 SRC_URI = " \
-    git://github.com/g-truc/glm;branch=master \
+    git://github.com/g-truc/glm;branch=master;protocol=https \
     file://0001-Make-GLM_ENABLE_EXPERIMENTAL-a-configurable-option.patch \
     file://0002-glm-install-headers-only.patch \
 "

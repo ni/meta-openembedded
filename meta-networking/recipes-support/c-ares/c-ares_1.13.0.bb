@@ -8,7 +8,7 @@ SRCREV = "3be1924221e1326df520f8498d704a5c4c8d0cce"
 PV = "1.13.0+gitr${SRCPV}"
 
 SRC_URI = "\
-    git://github.com/c-ares/c-ares.git \
+    git://github.com/c-ares/c-ares.git;protocol=https \
     file://cmake-install-libcares.pc.patch \
 "
 

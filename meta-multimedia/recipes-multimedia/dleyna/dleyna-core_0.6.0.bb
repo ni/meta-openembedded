@@ -11,7 +11,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=4fbd65380cdd255951079008b364516c \
 
 DEPENDS = "glib-2.0 gupnp"
 
-SRC_URI = "git://github.com/01org/${BPN}.git"
+SRC_URI = "git://github.com/01org/${BPN}.git;protocol=https"
 SRCREV = "27a3786ec013f64fd58243410a60798f824acec3"
 S = "${WORKDIR}/git"
 

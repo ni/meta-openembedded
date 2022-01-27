@@ -11,7 +11,7 @@ SRCREV = "1fd19417b8a4dd9945347e98dfa97e4cfd798d77"
 
 DEPENDS = "ncurses"
 
-SRC_URI = "git://github.com/telmich/gpm;protocol=git \
+SRC_URI = "git://github.com/telmich/gpm;protocol=https \
            file://init \
            file://no-docs.patch \
            file://processcreds.patch \

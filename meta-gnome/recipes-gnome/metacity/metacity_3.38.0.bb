@@ -12,7 +12,7 @@ inherit autotools gettext gnomebase distro_features_check
 # depends on startup-notification which depends on virtual/libx11
 REQUIRED_DISTRO_FEATURES = "x11"
 
-SRC_URI = "git://github.com/GNOME/metacity.git;branch=master \
+SRC_URI = "git://github.com/GNOME/metacity.git;branch=master;protocol=https \
            file://0001-drop-zenity-detection.patch \
 "
 

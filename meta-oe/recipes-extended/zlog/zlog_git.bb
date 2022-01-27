@@ -6,7 +6,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=4fbd65380cdd255951079008b364516c"
 PV = "1.2.12+git${SRCPV}"
 
 SRCREV = "13904dab2878aa2654d0c20fb8600a3dc5f2dd68"
-SRC_URI = "git://github.com/HardySimpson/zlog \
+SRC_URI = "git://github.com/HardySimpson/zlog;protocol=https \
            file://0001-event.c-Cast-pthread_t-to-unsigned-long-instead-of-u.patch \
            "
 

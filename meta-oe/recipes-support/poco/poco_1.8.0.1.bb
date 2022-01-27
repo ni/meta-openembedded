@@ -14,7 +14,7 @@ BBCLASSEXTEND = "native"
 
 SRCREV = "af527ab21fca5ab2659285408aec9920ed7c7b17"
 SRC_URI = " \
-    git://github.com/pocoproject/poco.git \
+    git://github.com/pocoproject/poco.git;protocol=https \
     file://run-ptest \
    "
 

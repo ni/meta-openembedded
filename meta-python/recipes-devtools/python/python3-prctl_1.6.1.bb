@@ -13,7 +13,7 @@ B = "${S}"
 SRCREV = "1107d0be7bec4b28c85c62c454882d16844c930a"
 PV = "1.6.1+git${SRCPV}"
 
-SRC_URI = "git://github.com/seveas/python-prctl;branch=master \
+SRC_URI = "git://github.com/seveas/python-prctl;branch=master;protocol=https \
            file://0001-support-cross-complication.patch \
 "
 inherit setuptools3 python3native

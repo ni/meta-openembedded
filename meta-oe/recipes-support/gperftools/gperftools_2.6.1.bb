@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=762732742c73dc6c7fbe8632f06c059a"
 DEPENDS += "libunwind"
 
 SRCREV = "bf840dec0495e17f5c8403e68e10b9d6bf05c559"
-SRC_URI = "git://github.com/gperftools/gperftools \
+SRC_URI = "git://github.com/gperftools/gperftools;protocol=https \
            file://0001-Support-Atomic-ops-on-clang.patch \
            file://0001-Use-ucontext_t-instead-of-struct-ucontext.patch \
            file://0001-fix-build-with-musl-libc.patch \

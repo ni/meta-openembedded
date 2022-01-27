@@ -7,7 +7,7 @@ DEPENDS = "libnl"
 PV = "0.1+gitr${SRCPV}"
 
 SRCREV = "b03d9ce6362e6d22d6929f2736409af3b0fd3c88"
-SRC_URI = "git://github.com/TI-OpenLink/ti-utils.git;branch=r5-jb"
+SRC_URI = "git://github.com/TI-OpenLink/ti-utils.git;branch=r5-jb;protocol=https"
 
 S = "${WORKDIR}/git"
 

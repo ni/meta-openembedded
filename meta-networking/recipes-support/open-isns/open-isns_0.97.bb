@@ -13,7 +13,7 @@ SECTION = "net"
 
 DEPENDS = "openssl"
 
-SRC_URI = "git://github.com/open-iscsi/open-isns \
+SRC_URI = "git://github.com/open-iscsi/open-isns;protocol=https \
            file://0001-util.h-endian.h-is-available-on-musl-on-linux.patch \
            "
 

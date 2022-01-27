@@ -9,7 +9,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263"
 
 DEPENDS += "asciidoc-native xmlto-native"
 
-SRC_URI = "git://github.com/dagwieers/dstat.git"
+SRC_URI = "git://github.com/dagwieers/dstat.git;protocol=https"
 
 SRCREV = "ebace6d4177f8748f35cec87f7a49946046b0a20"
 

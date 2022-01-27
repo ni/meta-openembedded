@@ -11,7 +11,7 @@ LIC_FILES_CHKSUM = " \
         file://about.html;md5=dcde438d73cf42393da9d40fabc0c9bc \
 "
 
-SRC_URI = "git://github.com/eclipse/paho.mqtt.c;protocol=http"
+SRC_URI = "git://github.com/eclipse/paho.mqtt.c;protocol=http;protocol=https"
 
 SRCREV = "e8d34da24ad807f5e698b327d67591fd4b4bfa7e"
 

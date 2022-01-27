@@ -20,7 +20,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=cb901168715f4782a2b06c3ddaefa558"
 PV .= "+git${SRCPV}"
 SRCREV = "dac1a65feac4ad72f612aab99f487056fbcf5c1a"
 
-SRC_URI = "git://github.com/protobuf-c/protobuf-c.git"
+SRC_URI = "git://github.com/protobuf-c/protobuf-c.git;protocol=https"
 
 S = "${WORKDIR}/git"
 

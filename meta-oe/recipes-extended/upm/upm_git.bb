@@ -11,7 +11,7 @@ SRCREV = "cc7fec9ae0228add9011bf1c2cd5e0ca2ba0d4f0"
 PV = "1.6.0-git${SRCPV}"
 
 SRC_URI = " \
-    git://github.com/intel-iot-devkit/${BPN}.git;protocol=http \
+    git://github.com/intel-iot-devkit/${BPN}.git;protocol=http;protocol=https \
 "
 
 S = "${WORKDIR}/git"

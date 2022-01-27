@@ -7,7 +7,7 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://../LICENSE;md5=0a5b5b742baf10cc1c158579eba7fb1d"
 
 SRCREV = "c949a18da5f041a36cc218c5c4b79c7705999b4f"
-SRC_URI = "git://github.com/sandstorm-io/capnproto.git;branch=release-${PV}"
+SRC_URI = "git://github.com/sandstorm-io/capnproto.git;branch=release-${PV};protocol=https"
 
 EXTRA_OECMAKE += "\
     -DBUILD_TESTING=OFF \

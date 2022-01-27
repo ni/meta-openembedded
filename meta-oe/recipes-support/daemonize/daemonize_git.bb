@@ -7,7 +7,7 @@ PV = "1.7.7+git${SRCPV}"
 inherit autotools
 
 SRCREV = "6b10308b13c13e7b911e75e27bf7e65c30d58799"
-SRC_URI = "git://github.com/bmc/daemonize.git \
+SRC_URI = "git://github.com/bmc/daemonize.git;protocol=https \
            file://fix-ldflags-for-gnuhash.patch"
 
 S = "${WORKDIR}/git"

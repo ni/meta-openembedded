@@ -7,7 +7,7 @@ DEPENDS = "libxfce4ui polkit"
 inherit xfce-app
 
 SRC_URI = " \
-    git://github.com/ncopa/${BPN}.git \
+    git://github.com/ncopa/${BPN}.git;protocol=https \
     file://0001-fix-Name-Comment-fields.patch \
 "
 SRCREV = "6ad1ee833c9e22e4dd72a8f7d54562d046965283"

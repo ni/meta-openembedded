@@ -6,7 +6,7 @@ LICENSE = "GPLv2+"
 LIC_FILES_CHKSUM = "file://COPYING;md5=4325afd396febcb659c36b49533135d4"
 
 SRCREV = "d6280e64b27d5a4bd7f37dac36b455f4ae5f9ab3"
-SRC_URI = "git://github.com/troglobit/smcroute.git;branch=master;protocol=git"
+SRC_URI = "git://github.com/troglobit/smcroute.git;branch=master;protocol=https"
 
 S = "${WORKDIR}/git"
 

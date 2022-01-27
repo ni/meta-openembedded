@@ -10,7 +10,7 @@ do_unpack_extra[depends] = "unzip-native:do_populate_sysroot"
 # depends on virtual/libx11
 REQUIRED_DISTRO_FEATURES = "x11"
 
-SRC_URI = "git://github.com/symless/synergy.git;protocol=http"
+SRC_URI = "git://github.com/symless/synergy.git;protocol=http;protocol=https"
 
 # Version 1.8.8-stable
 SRCREV ?= "c30301e23424db1125664da17deb8c3aa6aec52d"

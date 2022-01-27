@@ -11,7 +11,7 @@ B = "${S}"
 
 SRCREV = "369127c0edbba7d1a4e2e02486375dd9d379524f"
 PV = "0.10+git${SRCPV}"
-SRC_URI = "git://github.com/rhinstaller/libbytesize;branch=master \
+SRC_URI = "git://github.com/rhinstaller/libbytesize;branch=master;protocol=https \
            file://0001-remove-python2-support.patch \
 "
 

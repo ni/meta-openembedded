@@ -10,7 +10,7 @@ PRDATE = "20170412"
 BRANCH = "tbb_2017"
 SRCREV = "a2cfdfe946933cbe38bffe1d8086ae36f06691a3"
 PV = "${PRDATE}+${SRCPV}"
-SRC_URI = "git://github.com/01org/tbb;branch=${BRANCH} \
+SRC_URI = "git://github.com/01org/tbb;branch=${BRANCH};protocol=https \
            file://cross-compile.patch \
            file://0001-mallinfo-is-glibc-specific-API-mark-it-so.patch \
            file://tbb.pc \

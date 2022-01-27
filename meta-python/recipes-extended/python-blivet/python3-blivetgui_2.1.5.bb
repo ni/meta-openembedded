@@ -9,7 +9,7 @@ S = "${WORKDIR}/git"
 B = "${S}"
 
 SRCREV = "52ae8c000843c05abd1d8749f44bbe2e5d891d3d"
-SRC_URI = "git://github.com/rhinstaller/blivet-gui;branch=master \
+SRC_URI = "git://github.com/rhinstaller/blivet-gui;branch=master;protocol=https \
 "
 
 inherit distro_features_check

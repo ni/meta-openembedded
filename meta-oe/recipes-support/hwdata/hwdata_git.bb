@@ -7,7 +7,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=1556547711e8246992b999edd9445a57"
 
 PV = "0.298+git${SRCPV}"
 SRCREV = "9030fbd6ab1538f4d77d3cf1e0b463a7ec25b5c4"
-SRC_URI = "git://github.com/vcrhonek/${BPN}.git"
+SRC_URI = "git://github.com/vcrhonek/${BPN}.git;protocol=https"
 
 S = "${WORKDIR}/git"
 

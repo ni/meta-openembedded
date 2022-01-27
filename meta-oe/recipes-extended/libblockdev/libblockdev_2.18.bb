@@ -18,7 +18,7 @@ DEPENDS += " \
 
 SRCREV = "0debeb45562ac3d8f6f43f6f942b238abab55be9"
 SRC_URI = " \
-    git://github.com/rhinstaller/libblockdev;branch=master \
+    git://github.com/rhinstaller/libblockdev;branch=master;protocol=https \
     file://0001-fix-configure-and-compile-failures.patch \
 "
 

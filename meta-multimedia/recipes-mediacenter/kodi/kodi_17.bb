@@ -65,7 +65,7 @@ PROVIDES = "xbmc"
 SRCREV = "6abeebd5ba371547c8f04272296433f5e4e28e86"
 PV = "17.3+gitr${SRCPV}"
 ADDONSPV = "17.1"
-SRC_URI = "git://github.com/xbmc/xbmc.git;branch=Krypton \
+SRC_URI = "git://github.com/xbmc/xbmc.git;branch=Krypton;protocol=https \
     https://repo.voidlinux.eu/distfiles/${BPN}-${ADDONSPV}-generated-addons.tar.xz;name=addons;unpack=0 \
     file://0003-configure-don-t-try-to-run-stuff-to-find-tinyxml.patch \
     file://0004-handle-SIGTERM.patch \

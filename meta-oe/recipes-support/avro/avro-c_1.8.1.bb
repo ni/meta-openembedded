@@ -9,7 +9,7 @@ DEPENDS = "jansson zlib xz"
 PV .= "+git${SRCPV}"
 
 SRCREV = "4b3677c32b879e0e7f717eb95f9135ac654da760"
-SRC_URI = "git://github.com/apache/avro \
+SRC_URI = "git://github.com/apache/avro;protocol=https \
            file://0001-avro-c-Fix-build-with-clang-compiler.patch;patchdir=../../ \
 "
 

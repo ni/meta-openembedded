@@ -11,7 +11,7 @@ DEPENDS = "dbus glib-2.0 expat"
 PV = "9+git${SRCPV}"
 SRCREV = "ccd06b284892182af569e69046262331150e3536"
 
-SRC_URI = "git://github.com/bus1/dbus-broker;protocol=git"
+SRC_URI = "git://github.com/bus1/dbus-broker;protocol=https"
 SRC_URI += "file://0001-Comment-rst2man-related-stuff.patch"
 SRC_URI += "file://0002-Correct-including-directory-for-conf.patch"
 

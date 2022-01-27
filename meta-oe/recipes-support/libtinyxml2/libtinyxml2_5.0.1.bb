@@ -4,7 +4,7 @@ SECTION = "libs"
 LICENSE = "Zlib"
 LIC_FILES_CHKSUM = "file://tinyxml2.cpp;endline=22;md5=c19221dbd8a66ad3090462af4c5de5e7"
 
-SRC_URI = "git://github.com/leethomason/tinyxml2.git"
+SRC_URI = "git://github.com/leethomason/tinyxml2.git;protocol=https"
 
 SRCREV = "37bc3aca429f0164adf68c23444540b4a24b5778"
 

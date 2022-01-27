@@ -3,7 +3,7 @@ HOMEPAGE = "http://libndp.org/"
 LICENSE = "LGPLv2.1"
 LIC_FILES_CHKSUM = "file://COPYING;md5=4fbd65380cdd255951079008b364516c"
 
-SRC_URI = "git://github.com/jpirko/libndp \
+SRC_URI = "git://github.com/jpirko/libndp;protocol=https \
            file://0001-include-sys-select.h-for-fd_-definitions.patch \
            "
 # tag for v1.6

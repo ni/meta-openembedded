@@ -9,7 +9,7 @@ PV = "${BASEPV}+git${SRCPV}"
 
 SRCREV = "deffd18c24145bd6f965f44e735a50b65810ccdc"
 
-SRC_URI = "git://github.com/npat-efault/picocom"
+SRC_URI = "git://github.com/npat-efault/picocom;protocol=https"
 
 S = "${WORKDIR}/git"
 

@@ -7,7 +7,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=92d1b128950b11ba8495b64938fc164d"
 SRCREV = "a53934a3ae1244679f812d998a4f16f2c7f309a6"
 PV = "1.20+git${SRCPV}"
 
-SRC_URI = "git://github.com/google/${BPN}.git \
+SRC_URI = "git://github.com/google/${BPN}.git;protocol=https \
            file://0001-build_detect_platform-Check-for-__SSE4_2__.patch \
            file://0002-makefile-build-SHARED_MEMENVLIB.patch \
            file://0001-Makefile-Fix-parallel-build.patch \

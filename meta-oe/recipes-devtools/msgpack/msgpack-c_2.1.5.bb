@@ -11,7 +11,7 @@ PV .= "+git${SRCPV}"
 
 SRCREV = "208595b2620cf6260ce3d6d4cf8543f13b206449"
 
-SRC_URI = "git://github.com/msgpack/msgpack-c \
+SRC_URI = "git://github.com/msgpack/msgpack-c;protocol=https \
            file://0001-Fix-Werror-class-memaccess.patch \
            "
 

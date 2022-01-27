@@ -20,7 +20,7 @@ SRCREV = "106ffc04be1abf3ff3399f54ccf149815b287dd9"
 
 PV = "3.5.1+git${SRCPV}"
 
-SRC_URI = "git://github.com/google/protobuf.git;branch=3.5.x \
+SRC_URI = "git://github.com/google/protobuf.git;branch=3.5.x;protocol=https \
 	   file://run-ptest \
           "
 

@@ -13,7 +13,7 @@ PV .= "+git${SRCPV}"
 
 # v1.0.3
 SRCREV = "28dff090c74b6ba8609c4797294a5afe3fe73987"
-SRC_URI = "git://github.com/ClusterLabs/${BPN}.git \
+SRC_URI = "git://github.com/ClusterLabs/${BPN}.git;protocol=https \
            file://0001-build-fix-configure-script-neglecting-re-enable-out-.patch \
           "
 S = "${WORKDIR}/git"

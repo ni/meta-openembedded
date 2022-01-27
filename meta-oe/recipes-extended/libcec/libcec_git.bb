@@ -12,7 +12,7 @@ DEPENDS_append_rpi = "${@bb.utils.contains('MACHINE_FEATURES', 'vc4graphics', ''
 PV = "4.0.1+gitr${SRCPV}"
 
 SRCREV = "2fc92b5f02dca702da92ccc5ed7b805b240ef5df"
-SRC_URI = "git://github.com/Pulse-Eight/libcec.git \
+SRC_URI = "git://github.com/Pulse-Eight/libcec.git;protocol=https \
            file://python-install-location.patch"
 
 S = "${WORKDIR}/git"

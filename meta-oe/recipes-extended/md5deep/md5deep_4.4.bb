@@ -7,7 +7,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=9190f660105b9a56cdb272309bfd5491"
 # Release 4.4
 SRCREV = "cd2ed7416685a5e83eb10bb659d6e9bec01244ae"
 
-SRC_URI = "git://github.com/jessek/hashdeep.git \
+SRC_URI = "git://github.com/jessek/hashdeep.git;protocol=https \
         file://wrong-variable-expansion.patch \
         file://0001-Fix-errors-found-by-clang.patch \
         "

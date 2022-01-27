@@ -19,7 +19,7 @@ DEPENDS += "${@bb.utils.filter('DISTRO_FEATURES', 'systemd', d)}"
 RDEPENDS_${PN} = "acl"
 
 SRC_URI = " \
-    git://github.com/storaged-project/udisks.git \
+    git://github.com/storaged-project/udisks.git;protocol=https \
     file://0001-data-fix-out-of-tree-build.patch \
     file://non-gnu-libc.patch \
 "
