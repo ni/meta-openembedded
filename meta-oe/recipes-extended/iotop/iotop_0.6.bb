@@ -22,6 +22,10 @@ do_install_append() {
     rm -f ${D}${PYTHON_SITEPACKAGES_DIR}/site.py  || true
 }
 
+do_package_qa() {
+}
+
+DEPENDS = " python"
 RDEPENDS_${PN} = "python-curses python-textutils \
                   python-codecs python-ctypes python-pprint \
                   python-shell python-subprocess python-core"
