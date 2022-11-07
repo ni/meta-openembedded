@@ -12,6 +12,7 @@ DEPENDS += "\
     gsettings-desktop-schemas \
     libgudev \
     libsecret \
+    openssh-native \
     shadow-native \
 "
 
