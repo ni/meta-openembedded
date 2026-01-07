@@ -16,7 +16,8 @@ SRC_URI = "http://download.redis.io/releases/${BP}.tar.gz \
            file://0004-src-Do-not-reset-FINAL_LIBS.patch \
            file://0005-Define-_GNU_SOURCE-to-get-PTHREAD_MUTEX_INITIALIZER.patch \
            file://0006-Define-correct-gregs-for-RISCV32.patch \
-          "
+           file://CVE-2025-27151.patch \
+           "
 
 SRC_URI[sha256sum] = "6383b32ba8d246f41bbbb83663381f5a5f4c4713235433cec22fc4a47e9b6d5f"
 
@@ -65,3 +66,10 @@ INITSCRIPT_NAME = "redis-server"
 INITSCRIPT_PARAMS = "defaults 87"
 
 SYSTEMD_SERVICE:${PN} = "redis.service"
+
+# The vulnerability originates from Debian's packaging methodology,
+# which loads system-wide Lua libraries (lua-cjson, lua-cmsgpack),
+# enabling Lua sandbox escape. Upstream Redis builds, including
+# those built by Yocto/OpenEmbedded, utilize embedded Lua from the
+# deps/ directory and are therefore not affected by this issue.
+CVE_STATUS[CVE-2022-0543] = "not-applicable-config: Debian-specific packaging issue caused by loading system-wide Lua libraries; upstream builds use embedded Lua and are not affected"
