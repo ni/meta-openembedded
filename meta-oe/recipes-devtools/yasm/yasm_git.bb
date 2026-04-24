@@ -20,6 +20,7 @@ SRC_URI = "git://github.com/yasm/yasm.git;branch=master;protocol=https \
            file://CVE-2023-29579.patch \
            file://CVE-2021-33464.patch \
            file://CVE-2021-33456.patch \
+           file://CVE-2021-33454.patch \
            "
 
 S = "${WORKDIR}/git"
@@ -28,7 +29,7 @@ inherit autotools gettext python3native
 
 CACHED_CONFIGUREVARS = "CCLD_FOR_BUILD='${CC_FOR_BUILD}'"
 
-BBCLASSEXTEND = "native"
+BBCLASSEXTEND = "native nativesdk"
 
 PARALLEL_MAKE = ""
 
