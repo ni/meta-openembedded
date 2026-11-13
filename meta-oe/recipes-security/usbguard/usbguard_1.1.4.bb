@@ -59,6 +59,7 @@ FILES:${PN} += "\
 "
 
 do_install:append() {
+    install -d -m 0700 ${D}${sysconfdir}/${BPN}/rules.d
 # Create /var/log/usbguard in runtime.
     if [ "${@bb.utils.filter('DISTRO_FEATURES', 'systemd', d)}" ]; then
         install -d ${D}${nonarch_libdir}/tmpfiles.d
